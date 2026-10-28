@@ -1,0 +1,13 @@
+# Hand-written for turbbench's setup_repo.py. The two requirements_0{1,2}.txt files
+# add_repo.py found are a stale full pip-freeze dump from the authors' own shared
+# research environment (chainer, chainer-chemistry, rdkit-pypi, dgl/torch-geometric
+# graph-NN libraries, jupyterlab, ...) - none of that is imported by model/
+# TurbulenceNet.py, the only module this adapter actually imports. Its own top-level
+# imports are just torch/torch.nn/torch.nn.functional (stdlib numbers/pdb aside) plus
+# einops (rearrange, used throughout its TransformerBlock/Attention). torchvision/
+# numpy are kept for parity with every other adapter's env even though this one file
+# doesn't touch them directly.
+torch
+torchvision
+einops
+numpy
